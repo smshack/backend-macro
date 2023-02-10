@@ -8,9 +8,9 @@ const port = 25001;
 const appname = `mongo-app`
 
 const Routers = require('./routes/routes.js');
-const MONGO_URL = 'mongodb://127.0.0.1:27017/'
-const MONGODB_NAME = 'macro'
-
+require("dotenv").config();
+const MONGO_URL = process.env.MONGO_URL;
+const MONGODB_NAME = process.env.MONGODB_NAME;
 app.use(express.json());
 app.use(helmet());
 app.use(cors());
